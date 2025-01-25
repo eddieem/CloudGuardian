@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Security Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Security Report</h1>
+    <p>{{ report['summary'] }}</p>
+    <ul>
+    {% for issue in report['details'] %}
+        <li><strong>{{ issue['resource'] }} ({{ issue['type'] }}):</strong>
+            <ul>
+            {% for detail in issue['issues'] %}
+                <li>{{ detail }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
