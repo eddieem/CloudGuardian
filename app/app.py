@@ -1,5 +1,6 @@
 import os
 from flask import Blueprint, Flask, request, render_template, redirect, url_for, current_app
+
 from .security_analyzer import analyze_configuration
 
 bp = Blueprint('main', __name__)
@@ -21,7 +22,10 @@ def upload_file():
         filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], file.filename)
         file.save(filepath)
         
-        report = analyze_configuration(filepath)
+        try:
+            report = analyze_configuration(filepath)
+        except Exception as e:
+            return render_template('error.html', error_message=str(e))
         
         # Optionally delete the file after processing
         os.remove(filepath)
@@ -38,3 +42,12 @@ def about():
 def help():
     return render_template('help.html')
 
+# Error handler for 404 errors
+@bp.app_errorhandler(404)
+def page_not_found(e):
+    return render_template('error.html', error_message="404 Error: Page not found"), 404
+
+# Error handler for 500 errors
+@bp.app_errorhandler(500)
+def internal_server_error(e):
+    return render_template('error.html', error_message="500 Error: Internal server error"), 500
