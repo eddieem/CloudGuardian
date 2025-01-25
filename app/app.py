@@ -1,6 +1,6 @@
 import os
 from flask import Flask, request, render_template, redirect, url_for
-from security_analyzer import analyze_configuration
+from .security_analyzer import analyze_configuration  # Use relative import
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
@@ -37,3 +37,4 @@ def upload_file():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
