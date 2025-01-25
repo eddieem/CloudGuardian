@@ -53,8 +53,8 @@ The Cloud Security Configuration Analyzer is a web application that helps users 
 ## Setup and Running
 1. **Clone the repository**
    ```
-   git clone [GitHub Repository URL]
-   cd [Repository Directory]
+   git clone https://github.com/eddieem/CloudGuardian.git
+   pwd # to confirm you're on the CloudGuardian repo
    ```
 
 2. **Install dependencies**
