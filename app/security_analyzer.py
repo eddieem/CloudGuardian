@@ -53,28 +53,35 @@ def analyze_configuration(file_path):
         
         for resource in data['resources']:
             resource_issues = []
-            
+            recommendations = []
+
             if resource['type'] == 'virtual_machine':
                 if 'weakpassword' in resource['password']:
                     resource_issues.append('Weak password detected.')
+                    recommendations.append('Use a strong, complex password.')
                 if not resource['encryption']:
                     resource_issues.append('Data encryption is disabled.')
+                    recommendations.append('Enable data encryption to protect sensitive information.')
                 if not resource['mfa_enabled']:
                     resource_issues.append('Multi-Factor Authentication is not enabled.')
+                    recommendations.append('Enable Multi-Factor Authentication to enhance security.')
             
             elif resource['type'] == 'storage_account':
                 if not resource['encryption']:
                     resource_issues.append('Data encryption is disabled.')
+                    recommendations.append('Enable data encryption to protect stored data.')
             
             elif resource['type'] == 'database':
                 if 'supersecurepassword' not in resource['password']:
                     resource_issues.append('Password might not be secure.')
+                    recommendations.append('Ensure the database password is strong and complex.')
             
             if resource_issues:
                 issues.append({
                     'resource': resource['name'],
                     'type': resource['type'],
-                    'issues': resource_issues
+                    'issues': resource_issues,
+                    'recommendations': recommendations
                 })
         
         report = generate_report(issues)
