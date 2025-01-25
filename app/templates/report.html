@@ -13,8 +13,13 @@
                 <li>{{ detail }}</li>
             {% endfor %}
             </ul>
+            <ul>
+            <strong>Recommendations:</strong>
+            {% for recommendation in issue['recommendations'] %}
+                <li>{{ recommendation }}</li>
+            {% endfor %}
+            </ul>
         </li>
     {% endfor %}
     </ul>
 {% endblock %}
-
