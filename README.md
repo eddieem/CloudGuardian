@@ -31,23 +31,26 @@ The Cloud Security Configuration Analyzer is a web application that helps users 
 
 ## Project Structure
 ```
-/app
-│  ├── static
-│  │   ├── styles.css
-│  ├── templates
-│  │   ├── base.html
-│  │   ├── error.html
-│  │   ├── index.html
-│  │   ├── report.html
-│  │   ├── about.html
-│  │   ├── help.html
-│  ├── uploads
-│  ├── app.py
-│  └── security_analyzer.py
-│  
+CloudGuardian/
+├── app/
+│   ├── __init__.py
+│   ├── static/
+│   │   └── styles.css
+│   ├── templates/
+│   │   ├── base.html
+│   │   ├── index.html
+│   │   ├── report.html
+│   │   ├── error.html
+│   │   ├── about.html
+│   │   ├── help.html
+│   ├── uploads/
+│   │   └── .gitkeep
+│   ├── app.py
+│   └── security_analyzer.py
 ├── requirements.txt
 ├── README.md
 └── run.py
+
  ```
 
 ## Setup and Running
