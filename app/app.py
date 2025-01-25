@@ -1,5 +1,5 @@
 import os
-from flask import Blueprint, Flask, request, render_template, redirect, url_for
+from flask import Blueprint, Flask, request, render_template, redirect, url_for, current_app
 from .security_analyzer import analyze_configuration
 
 bp = Blueprint('main', __name__)
@@ -18,7 +18,7 @@ def upload_file():
         return redirect(request.url)
     
     if file and file.filename.endswith('.json'):
-        filepath = os.path.join(Flask.current_app.config['UPLOAD_FOLDER'], file.filename)
+        filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], file.filename)
         file.save(filepath)
         
         report = analyze_configuration(filepath)
@@ -30,5 +30,11 @@ def upload_file():
     else:
         return redirect(request.url)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+@bp.route('/about')
+def about():
+    return render_template('about.html')
+
+@bp.route('/help')
+def help():
+    return render_template('help.html')
+
