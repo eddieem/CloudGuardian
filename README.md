@@ -55,7 +55,7 @@ CloudGuardian/
 
 ## Setup and Running
 1. **Clone the repository**
-   ```
+   ```sh
    git clone https://github.com/eddieem/CloudGuardian.git
    pwd # to confirm you're on the CloudGuardian repo
    ```
@@ -148,7 +148,13 @@ Here is an example of a valid JSON configuration file:
 ```
 
 ## Screenshots
-## File Upload
-## Security Report
+### Home Page
+![Home Page](https://github.com/user-attachments/assets/1ee49bff-f95c-4590-afa5-7d86eeaecaa7)
+
+### File Upload
+### Security Report
+- A screenshot of the generated security report displayingg the summary and detailed issues found with recommendations in the JSON configuration file
+  ![Security Report](https://github.com/user-attachments/assets/82c41176-7e09-4ba4-950b-a97ffba19d21)
+
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
