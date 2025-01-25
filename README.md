@@ -1,6 +1,6 @@
 # CloudGuardian - Cloud Security Confiuration Analyzer
 ## Overview
-The Cloud Security Configuration Analyzer is a web application that helps users identify and mitigate potential security vulnerabilities in their cloud infrastructure by analyzing uploaded JSON configuration files and generating a security report.
+CloudGuardian is a web application that helps users identify and mitigate potential security vulnerabilities in their cloud infrastructure by analyzing uploaded JSON configuration files and generating a security report.
 
 ## Features
 - File Upload: Upload JSON configuration files containing your cloud resources and security settings.
