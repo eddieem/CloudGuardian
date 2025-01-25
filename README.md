@@ -149,12 +149,17 @@ Here is an example of a valid JSON configuration file:
 
 ## Screenshots
 ### Home Page
-![Home Page](https://github.com/user-attachments/assets/1ee49bff-f95c-4590-afa5-7d86eeaecaa7)
-
+- This is the main page where users can upload their JSON configuration file.
+  ![Home Page](https://github.com/user-attachments/assets/1ee49bff-f95c-4590-afa5-7d86eeaecaa7)
 ### File Upload
+- Users can choose their JSON file and upload it for analysis.
+  ![File Upload Form](https://github.com/user-attachments/assets/970b0896-5a46-47b0-8db2-d0c33c01024e)
 ### Security Report
-- A screenshot of the generated security report displayingg the summary and detailed issues found with recommendations in the JSON configuration file
+- The security report provides a summary and detailed analysis of potential issues found in the configuration with recommendations to address the issues.
   ![Security Report](https://github.com/user-attachments/assets/82c41176-7e09-4ba4-950b-a97ffba19d21)
+### Error Handling Page
+- A screenshot of an error page
+  ![Error Handling Page](https://github.com/user-attachments/assets/a5bc018d-142c-43bc-adf3-3ac3f780d3d1)
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
