@@ -1,11 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Security Report</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Security Report{% endblock %}
+
+{% block content %}
     <h1>Security Report</h1>
     <p>{{ report['summary'] }}</p>
     <ul>
@@ -19,5 +16,5 @@
         </li>
     {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
+
