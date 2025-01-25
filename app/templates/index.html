@@ -1,15 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Upload JSON File</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
     <h1>Upload Configuration File</h1>
-    <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ url_for('main.upload_file') }}" method="post" enctype="multipart/form-data">
         <input type="file" name="file">
         <input type="submit" value="Upload">
     </form>
-</body>
-</html>
+{% endblock %}
